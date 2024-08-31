@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:11.5
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=madness_data
+    ports:
+      - 5432:5432
+    networks:
+      - shared-network
+    volumes:
+      - ./postgres-db:/var/lib/postgresql/data
+    
+  website:
+    container_name: madness_mult
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80 # Map port 80 inside the container to port 80 on your host
+    networks:
+      - shared-network
+    depends_on: 
+      - postgres
+
+networks:
+  shared-network:
