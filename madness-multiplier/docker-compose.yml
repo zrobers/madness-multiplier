@@ -13,18 +13,30 @@ services:
       - shared-network
     volumes:
       - ./postgres-db:/var/lib/postgresql/data
-    
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - shared-network
+    depends_on:
+      - postgres
+    ports:
+      - "5001:5000"  # Adjust this if needed
+
   website:
     container_name: madness_mult
     restart: unless-stopped
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile  # This should be in the root directory
     ports:
-      - 80:80 # Map port 80 inside the container to port 80 on your host
+      - 80:80
     networks:
       - shared-network
-    depends_on: 
+    depends_on:
       - postgres
 
 networks:
