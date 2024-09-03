@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginButton from './components/LoginButton';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> bruh 
         </p>
         <a
           className="App-link"
@@ -15,9 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+         Bruh.com
         </a>
       </header>
+      <LoginButton/>
     </div>
   );
 }
