@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton'
+import Profile from './components/Profile'
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
         </a>
       </header>
       <LoginButton/>
-      
+      <LogoutButton/>
+      <Profile/>
       <h1 className="text-3xl font-bold underline">
       Hello world!
       </h1>
