@@ -32,11 +32,14 @@ services:
       context: ./frontend
       dockerfile: Dockerfile  # This should be in the root directory
     ports:
-      - 3000:80
+      - 3000:3000
     networks:
       - shared-network
     depends_on:
       - postgres
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
 
 networks:
   shared-network:
