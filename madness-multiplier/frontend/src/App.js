@@ -4,7 +4,7 @@ import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton'
 import Profile from './components/Profile'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Welcome from './pages/WelcomePage';
+import WelcomePage from './pages/WelcomePage';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/welcome" element={<Welcome />} />
+      <Route path="/welcome" element={<WelcomePage />}/>
       </Routes>
     </Router>
     </div>
