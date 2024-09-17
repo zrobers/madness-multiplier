@@ -10,7 +10,8 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "@auth0/auth0-react": "^2.2.4"
+    "@auth0/auth0-react": "^2.2.4",
+    "react-router-dom": "^6.x.x"
   },
   "scripts": {
     "start": "react-scripts start",
